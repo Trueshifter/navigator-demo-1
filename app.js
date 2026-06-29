@@ -1,7 +1,7 @@
 const CHARGE_PER_SESSION = 5;
 const SESSION_SECONDS = 5 * 60;
 const DECAY_INTERVAL_MS = 5 * 60 * 1000;
-const DECAY_AMOUNT = 1;
+const DECAY_AMOUNT = 0;
 const MAX_DAYS = 21;
 
 const state = JSON.parse(localStorage.getItem('navigatorState') || '{}');
