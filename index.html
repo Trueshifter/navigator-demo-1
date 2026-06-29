@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d121f" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Навигатор" />
+  <title>Навигатор — демо</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <div class="eyebrow">Навигатор</div>
+      <h1>Вернись в присутствие</h1>
+      <p class="subtitle">Подключись к миру. Наблюдай. Дыши. Заряжай внутренний аккумулятор.</p>
+    </section>
+
+    <section class="battery-card">
+      <div class="battery-shell">
+        <div class="battery-cap"></div>
+        <div id="batteryFill" class="battery-fill"></div>
+        <div id="batteryPulse" class="battery-pulse"></div>
+      </div>
+      <div class="charge-row">
+        <div>
+          <div id="chargeValue" class="charge-value">0%</div>
+          <div id="chargeStatus" class="charge-status">Аккумулятор ждёт подключения</div>
+        </div>
+        <div class="base-box">
+          <span>Ёмкость</span>
+          <strong id="capacityValue">0%</strong>
+        </div>
+      </div>
+      <button id="presenceButton" class="primary-button">Присутствовать 5 минут</button>
+      <button id="demoButton" class="secondary-button">Демо: +5%</button>
+      <div class="demo-controls"><button id="skip5Button" class="secondary-button">⏩ +5 минут</button><button id="skipDayButton" class="secondary-button">📅 +1 сутки</button></div><p id="timerText" class="timer-text">Одно присутствие даёт +5% заряда.</p>
+    </section>
+
+    <section id="completionCard" class="completion-card hidden">
+      <div class="completion-icon">✓</div>
+      <div>
+        <h2>Первый этап завершён</h2>
+        <p>Ты прошёл 21 день возвращения в присутствие. Карта первого участка пути открыта. Теперь внутренняя ёмкость стала устойчивой опорой, которую можно поддерживать мягче и спокойнее.</p>
+      </div>
+    </section>
+
+    <section class="mood-card">
+      <div class="section-title">
+        <span>Настроение</span>
+        <strong id="moodValue">0%</strong>
+      </div>
+      <div class="mood-labels">
+        <span>−100%</span>
+        <span>0%</span>
+        <span>+100%</span>
+      </div>
+      <input id="moodSlider" class="mood-slider" type="range" min="-100" max="100" value="0" step="1" />
+      <p id="moodText" class="mood-text">Отметь, где ты сейчас. Не оценивай — просто наблюдай.</p>
+    </section>
+
+    <section class="map-card">
+      <div class="section-title">
+        <span>Карта пути</span>
+        <strong id="dayCounter">День 1 / 21</strong>
+      </div>
+      <div id="mapGrid" class="map-grid" aria-label="Карта пути"></div>
+      <p id="mapText" class="map-text">Каждый полностью заряженный день открывает новый фрагмент карты.</p>
+    </section>
+
+    <section class="principle-card">
+      <div class="section-title"><span>Ориентир дня</span></div>
+      <p id="principleText">Энергия приходит не из приложения. Она приходит из контакта с реальностью.</p>
+    </section>
+
+    <button id="resetProgressBtn" class="reset-button">Reset Progress</button>
+  </main>
+
+  <script src="app.js?v=single-state-fix-1"></script>
+
+</body>
+</html>
